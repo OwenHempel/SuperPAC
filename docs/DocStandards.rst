@@ -36,6 +36,19 @@ Which will produce:
 
 **Description:** The filling is the most important part of the pie. It provides the sweet taste and moisture.
 
+
+A sample class:
+
+	`'''The class for our combination temperature/humidity sensor. 
+	**Methods:** 
+	* :func:`htu_reset`
+	* :func:`read_temperature`
+	* :func:`read_humidity`
+	Initialized during initialization of the main control loop. Periodic calls to the methods will be made in the main control loop.
+	'''`
+
+
+
 Functions and Methods
 ---------------------
 
