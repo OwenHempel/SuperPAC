@@ -18,36 +18,54 @@ Modules and Classes
 
 Code modules/classes will be rejected unless they have some key items in the docstrings. Firstly, any modules that are imported anywhere within the module should be listed under a bold heading **Imports**. Parent classes should be listed as well, and a short but clear description of the purpose of the module must be included.
 
-`
-""
+
+.. code-block:: python
+
+  module filling:
+  """
+  **Imports:** Cream, Sugar
+
+  **Parent classes:** Pie, Pastry
+
+  **Description:** The filling is the most important part of the pie. It provides the sweet taste and moisture.
+  """
+  
+
+Which will produce the following in the description of the module:
+
 **Imports:** Cream, Sugar
 
 **Parent classes:** Pie, Pastry
 
 **Description:** The filling is the most important part of the pie. It provides the sweet taste and moisture.
-"""
-`
 
-Which will produce:
+And of course, the same applies for a sample class:
 
-**Imports:** Cream, Sugar
+.. code-block:: python
 
-**Parent classes:** Pie, Pastry
+  Class sample_class:
 
-**Description:** The filling is the most important part of the pie. It provides the sweet taste and moisture.
+	'''The class for our combination temperature/humidity sensor. 
 
-
-A sample class:
-
-	`'''The class for our combination temperature/humidity sensor. 
 	**Methods:** 
+
 	* :func:`htu_reset`
 	* :func:`read_temperature`
 	* :func:`read_humidity`
+
 	Initialized during initialization of the main control loop. Periodic calls to the methods will be made in the main control loop.
-	'''`
+	'''
 
+And the output:
 
+**Methods:** 
+	
+* :func:`htu_reset`
+* :func:`read_temperature`
+* :func:`read_humidity`
+
+Initialized during initialization of the main control loop. Periodic calls to the methods will be made in the main control loop.
+	
 
 Functions and Methods
 ---------------------
@@ -56,14 +74,17 @@ Functions and methods need to have docstrings too. Again, a small description of
 
 Arguments and their types, as well as returns and their types must be documented.
 
-`
-"""
-Args:
-	Row (list): Rule, read from the sql database 
-Returns:
-	Bool: noOverlap
-Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits"""
-`
+.. code-block:: python
+
+  def bake(time, temp):
+  '''
+  Args:
+	Time (list): Rule, read from the sql database 
+  Returns:
+  	Temp: noOverlap
+  Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits
+  '''
+
 
 Which makes:
 

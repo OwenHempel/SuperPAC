@@ -13,7 +13,7 @@ Contents:
    
    DocStandards
    EquationSolver
-
+   CircuitElements
 
 
 Indices and tables

@@ -24,6 +24,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SuperPAC 0.1a documentation" href="home.html" />
+    <link rel="next" title="SuperPAC Circuit Solutions" href="EquationSolver.html" />
+    <link rel="prev" title="Welcome to SuperPAC’s documentation!" href="home.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -50,42 +52,58 @@
 <div class="section" id="modules-and-classes">
 <h2>Modules and Classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">¶</a></h2>
 <p>Code modules/classes will be rejected unless they have some key items in the docstrings. Firstly, any modules that are imported anywhere within the module should be listed under a bold heading <strong>Imports</strong>. Parent classes should be listed as well, and a short but clear description of the purpose of the module must be included.</p>
-<div class="section" id="id3">
-<h3><a href="#id1"><span class="problematic" id="id2">`</span></a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p><strong>Imports:</strong> Cream, Sugar</p>
-<p><strong>Parent classes:</strong> Pie, Pastry</p>
-<p><strong>Description:</strong> The filling is the most important part of the pie. It provides the sweet taste and moisture.
-&#8220;&#8221;&#8221;
-`</p>
-<p>Which will produce:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">module</span> <span class="n">filling</span><span class="p">:</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">**Imports:** Cream, Sugar</span>
+
+<span class="sd">**Parent classes:** Pie, Pastry</span>
+
+<span class="sd">**Description:** The filling is the most important part of the pie. It provides the sweet taste and moisture.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Which will produce the following in the description of the module:</p>
 <p><strong>Imports:</strong> Cream, Sugar</p>
 <p><strong>Parent classes:</strong> Pie, Pastry</p>
 <p><strong>Description:</strong> The filling is the most important part of the pie. It provides the sweet taste and moisture.</p>
-<p>A sample class:</p>
-<blockquote>
-<div><cite>&#8216;&#8217;&#8216;The class for our combination temperature/humidity sensor.
-**Methods:**
-* :func:`htu_reset</cite>
-* <code class="xref py py-func docutils literal"><span class="pre">read_temperature()</span></code>
-* <code class="xref py py-func docutils literal"><span class="pre">read_humidity()</span></code>
-Initialized during initialization of the main control loop. Periodic calls to the methods will be made in the main control loop.
-&#8216;&#8217;&#8216;`</div></blockquote>
+<p>And of course, the same applies for a sample class:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Class</span> <span class="n">sample_class</span><span class="p">:</span>
+
+      <span class="sd">&#39;&#39;&#39;The class for our combination temperature/humidity sensor.</span>
+
+<span class="sd">      **Methods:**</span>
+
+<span class="sd">      * :func:`htu_reset`</span>
+<span class="sd">      * :func:`read_temperature`</span>
+<span class="sd">      * :func:`read_humidity`</span>
+
+<span class="sd">      Initialized during initialization of the main control loop. Periodic calls to the methods will be made in the main control loop.</span>
+<span class="sd">      &#39;&#39;&#39;</span>
+</pre></div>
 </div>
+<p>And the output:</p>
+<p><strong>Methods:</strong></p>
+<ul class="simple">
+<li><code class="xref py py-func docutils literal"><span class="pre">htu_reset()</span></code></li>
+<li><code class="xref py py-func docutils literal"><span class="pre">read_temperature()</span></code></li>
+<li><code class="xref py py-func docutils literal"><span class="pre">read_humidity()</span></code></li>
+</ul>
+<p>Initialized during initialization of the main control loop. Periodic calls to the methods will be made in the main control loop.</p>
 </div>
 <div class="section" id="functions-and-methods">
 <h2>Functions and Methods<a class="headerlink" href="#functions-and-methods" title="Permalink to this headline">¶</a></h2>
 <p>Functions and methods need to have docstrings too. Again, a small description of the code, what it returns and why.</p>
 <p>Arguments and their types, as well as returns and their types must be documented.</p>
-<div class="section" id="id6">
-<h3><a href="#id4"><span class="problematic" id="id5">`</span></a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>Row (list): Rule, read from the sql database</dd>
-<dt>Returns:</dt>
-<dd>Bool: noOverlap</dd>
-</dl>
-<p>Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits&#8221;&#8220;&#8221;
-`</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Args:</span>
+<span class="sd">      Time (list): Rule, read from the sql database</span>
+<span class="sd">Returns:</span>
+<span class="sd">      Temp: noOverlap</span>
+<span class="sd">Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
 <p>Which makes:</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -94,7 +112,6 @@ Initialized during initialization of the main control loop. Periodic calls to th
 <dd>Bool: noOverlap</dd>
 </dl>
 <p>Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits</p>
-</div>
 </div>
 </div>
 
@@ -109,14 +126,8 @@ Initialized during initialization of the main control loop. Periodic calls to th
 <li><a class="reference internal" href="#">Documentation Standards</a><ul>
 <li><a class="reference internal" href="#build-engine">Build Engine</a></li>
 <li><a class="reference internal" href="#docstring-formatting">Docstring formatting</a></li>
-<li><a class="reference internal" href="#modules-and-classes">Modules and Classes</a><ul>
-<li><a class="reference internal" href="#id3">`</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#functions-and-methods">Functions and Methods</a><ul>
-<li><a class="reference internal" href="#id6">`</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#modules-and-classes">Modules and Classes</a></li>
+<li><a class="reference internal" href="#functions-and-methods">Functions and Methods</a></li>
 </ul>
 </li>
 </ul>
@@ -124,6 +135,8 @@ Initialized during initialization of the main control loop. Periodic calls to th
 <h3>Related Topics</h3>
 <ul>
   <li><a href="home.html">Documentation overview</a><ul>
+      <li>Previous: <a href="home.html" title="previous chapter">Welcome to SuperPAC&#8217;s documentation!</a></li>
+      <li>Next: <a href="EquationSolver.html" title="next chapter">SuperPAC Circuit Solutions</a></li>
   </ul></li>
 </ul>
 </div>
