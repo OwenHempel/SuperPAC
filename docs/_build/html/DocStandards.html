@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentation Standards &mdash; SuperPAC 0.1a documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="SuperPAC 0.1a documentation" href="home.html" />
+    <link rel="next" title="SuperPAC Circuit Solutions" href="EquationSolver.html" />
+    <link rel="prev" title="Welcome to SuperPAC’s documentation!" href="home.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="documentation-standards">
+<h1>Documentation Standards<a class="headerlink" href="#documentation-standards" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="build-engine">
+<h2>Build Engine<a class="headerlink" href="#build-engine" title="Permalink to this headline">¶</a></h2>
+<p>SuperPAC documentation will be built using Sphinx. Thus, all documentation (including this guide) will be plaintext ReStructured Text (.rst) files and/or contained within the python source itself.</p>
+<p>If you wish to write modules (And you are welcome to do so), and you want them included in the project, the modules have to be commented properly so that everybody is on the same page.</p>
+</div>
+<div class="section" id="docstring-formatting">
+<h2>Docstring formatting<a class="headerlink" href="#docstring-formatting" title="Permalink to this headline">¶</a></h2>
+<p>Remember that sphinx formatting applies in docstrings when you include them in sphinx. For a full description, refer to the sphinx documentation on docstrings</p>
+</div>
+<div class="section" id="modules-and-classes">
+<h2>Modules and Classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">¶</a></h2>
+<p>Code modules/classes will be rejected unless they have some key items in the docstrings. Firstly, any modules that are imported anywhere within the module should be listed under a bold heading <strong>Imports</strong>. Parent classes should be listed as well, and a short but clear description of the purpose of the module must be included.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">module</span> <span class="n">filling</span><span class="p">:</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">**Imports:** Cream, Sugar</span>
+
+<span class="sd">**Parent classes:** Pie, Pastry</span>
+
+<span class="sd">**Description:** The filling is the most important part of the pie. It provides the sweet taste and moisture.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Which will produce the following in the description of the module:</p>
+<p><strong>Imports:</strong> Cream, Sugar</p>
+<p><strong>Parent classes:</strong> Pie, Pastry</p>
+<p><strong>Description:</strong> The filling is the most important part of the pie. It provides the sweet taste and moisture.</p>
+<p>And of course, the same applies for a sample class:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Class</span> <span class="n">sample_class</span><span class="p">:</span>
+
+      <span class="sd">&#39;&#39;&#39;The class for our combination temperature/humidity sensor.</span>
+
+<span class="sd">      **Methods:**</span>
+
+<span class="sd">      * :func:`htu_reset`</span>
+<span class="sd">      * :func:`read_temperature`</span>
+<span class="sd">      * :func:`read_humidity`</span>
+
+<span class="sd">      Initialized during initialization of the main control loop. Periodic calls to the methods will be made in the main control loop.</span>
+<span class="sd">      &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>And the output:</p>
+<p><strong>Methods:</strong></p>
+<ul class="simple">
+<li><code class="xref py py-func docutils literal"><span class="pre">htu_reset()</span></code></li>
+<li><code class="xref py py-func docutils literal"><span class="pre">read_temperature()</span></code></li>
+<li><code class="xref py py-func docutils literal"><span class="pre">read_humidity()</span></code></li>
+</ul>
+<p>Initialized during initialization of the main control loop. Periodic calls to the methods will be made in the main control loop.</p>
+</div>
+<div class="section" id="functions-and-methods">
+<h2>Functions and Methods<a class="headerlink" href="#functions-and-methods" title="Permalink to this headline">¶</a></h2>
+<p>Functions and methods need to have docstrings too. Again, a small description of the code, what it returns and why.</p>
+<p>Arguments and their types, as well as returns and their types must be documented.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Args:</span>
+<span class="sd">      Time (list): Rule, read from the sql database</span>
+<span class="sd">Returns:</span>
+<span class="sd">      Temp: noOverlap</span>
+<span class="sd">Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Which makes:</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>Row (list): Rule, read from the sql database</dd>
+<dt>Returns:</dt>
+<dd>Bool: noOverlap</dd>
+</dl>
+<p>Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="home.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentation Standards</a><ul>
+<li><a class="reference internal" href="#build-engine">Build Engine</a></li>
+<li><a class="reference internal" href="#docstring-formatting">Docstring formatting</a></li>
+<li><a class="reference internal" href="#modules-and-classes">Modules and Classes</a></li>
+<li><a class="reference internal" href="#functions-and-methods">Functions and Methods</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="home.html">Documentation overview</a><ul>
+      <li>Previous: <a href="home.html" title="previous chapter">Welcome to SuperPAC&#8217;s documentation!</a></li>
+      <li>Next: <a href="EquationSolver.html" title="next chapter">SuperPAC Circuit Solutions</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/DocStandards.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Owen Hempel.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/DocStandards.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
