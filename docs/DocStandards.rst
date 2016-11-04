@@ -92,6 +92,7 @@ Args:
 	Row (list): Rule, read from the sql database 
 Returns:
 	Bool: noOverlap
+  
 Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits
 	
 

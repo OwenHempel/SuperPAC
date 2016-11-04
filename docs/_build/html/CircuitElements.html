@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &mdash; SuperPAC 0.1a documentation</title>
+    <title>Circuit Elements &mdash; SuperPAC 0.1a documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SuperPAC 0.1a documentation" href="home.html" />
+    <link rel="prev" title="SuperPAC Circuit Solutions" href="EquationSolver.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -36,7 +37,40 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  
+  <div class="section" id="module-Component">
+<span id="circuit-elements"></span><h1>Circuit Elements<a class="headerlink" href="#module-Component" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Component.Component">
+<em class="property">class </em><code class="descclassname">Component.</code><code class="descname">Component</code><a class="reference internal" href="_modules/Component.html#Component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Component.Component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Circuit Component Base class. provides the absolute minimum to meet the definition of a component in a circuit.</p>
+<dl class="method">
+<dt id="Component.Component.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>Node</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Component.html#Component.connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Component.Component.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a Node to the component&#8217;s nodes, if there is a connection available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Component.Component.disconnect">
+<code class="descname">disconnect</code><span class="sig-paren">(</span><em>Node</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Component.html#Component.disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Component.Component.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a Node from the component&#8217;s nodes.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-AnalogComponent"></span><dl class="class">
+<dt id="AnalogComponent.AnalogComponent">
+<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">AnalogComponent</code><a class="reference internal" href="_modules/AnalogComponent.html#AnalogComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.AnalogComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to describe all analog components. Only three types exist: Resistors, Capacitors, and Inductors. This module is designed to be extensible to include other types. Unless overridden by a subclass, Analog components will be limited to two connections.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="AnalogComponent.Resistor">
+<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Resistor</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Resistor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Resistor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for a resistor. Transfer function is a purely proportional relation.</p>
+</dd></dl>
+
+</div>
+
 
           </div>
         </div>
@@ -46,6 +80,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="home.html">Documentation overview</a><ul>
+      <li>Previous: <a href="EquationSolver.html" title="previous chapter">SuperPAC Circuit Solutions</a></li>
   </ul></li>
 </ul>
 </div>
