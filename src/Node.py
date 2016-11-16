@@ -1,28 +1,35 @@
+
+
+
+
 class Node:
 	'''
-	**Description:** Class defining a circuit node, which is the intersection of two or components. A node has N connections, where N is the number of connected components. If a component does not have a node to attach to, a new node will be created.
+	**Description:** Class defining a circuit node, which is the intersection of two or components. A node has N Connections, where N is the number of connected components. If a component does not have a node to attach to, a new node will be created.
 	Has the following properties:
 
-	* connections: Defines which connections are connected to the node.
+	* Connections: Defines which Connections are connected to the node.
 	* Voltage: If set, The node's reference voltage is held at this value. 
-	'''	
+	'''
 	def __init__(self):
+		from sympy import Symbol
 		'''
-		Constructor method for the class. Initializes to no connections, and voltage set to None.
+		Constructor method for the class. Initializes to no Connections, and voltage set to None.
 		'''
-		self.connections  = []
-		self.Voltage = None
+		self.Connections  = []
+		self.V = Symbol('v')
 		print("Node Created")
 
 	def Nconnect(self, component):
 		'''
+		Args:
+
 		Returns: 
 			Status (String): Describes the status of the connection (successful or otherwise)
 
 		Method to add a component to the node, if it is not already connected to the node. 
 		'''
-		if component not in self.connections:
-			self.connections.append(component)
+		if component not in self.Connections:
+			self.Connections.append(component)
 			return "Success. Component Connected."
 
 		else:
@@ -35,8 +42,8 @@ class Node:
 
 		Method to disconnect a component from the node, if it is connected.		
 		'''
-		if component in self.connections:
-			self.connections.remove(component)
+		if component in self.Connections:
+			self.Connections.remove(component)
 			return "Success. Component Disconnected."
 
 		else:
@@ -45,18 +52,20 @@ class Node:
 	def getConnections(self):
 		'''
 		Returns:
-			Connections (List): List of all connections connected to the node
-			
-		Accessor. Returns all of the connections connected to the node in a list
+			Connections (List): List of all Connections connected to the node
+
+		Accessor. Returns all of the Connections connected to the node in a list
 		'''
-		return self.connections
+		return self.Connections
 
 	def setVoltage(self, Voltage):
 		'''
 		Mutator. Sets the voltage to the supplied value.
 		'''
-		self.Voltage = Voltage
+		self.V = Voltage
 
-
-
-
+	def ground(self):
+		'''
+		Mutator. Sets the voltage to ground (0).
+		'''
+		self.setVoltage(0)

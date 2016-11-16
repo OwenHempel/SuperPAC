@@ -1,44 +1,148 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Circuit Elements &mdash; SuperPAC 0.1a documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1a',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="SuperPAC 0.1a documentation" href="home.html" />
-    <link rel="prev" title="SuperPAC Circuit Solutions" href="EquationSolver.html" />
-   
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Circuit Elements &mdash; SuperPAC 0.1a documentation</title>
+  
 
-  </head>
-  <body role="document">  
+  
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SuperPAC 0.1a documentation" href="index.html"/>
+        <link rel="next" title="Nodes" href="Nodes.html"/>
+        <link rel="prev" title="SuperPAC Circuit Solutions" href="EquationSolver.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="home.html" class="icon icon-home"> SuperPAC
+          
+
+          
+          </a>
+
+          
             
-  <div class="section" id="module-Component">
-<span id="circuit-elements"></span><h1>Circuit Elements<a class="headerlink" href="#module-Component" title="Permalink to this headline">¶</a></h1>
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="DocStandards.html">Documentation Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EquationSolver.html">SuperPAC Circuit Solutions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Circuit Elements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-Component">Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-AnalogComponent">Analog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Supply">Supplies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Nodes.html">Nodes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="home.html">SuperPAC</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="home.html">Docs</a> &raquo;</li>
+      
+    <li>Circuit Elements</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/CircuitElements.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="circuit-elements">
+<h1>Circuit Elements<a class="headerlink" href="#circuit-elements" title="Permalink to this headline">¶</a></h1>
+<p>Circuit Elements are defined here as any component you can place in your circuit.</p>
+<div class="section" id="module-Component">
+<span id="components"></span><h2>Components<a class="headerlink" href="#module-Component" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="Component.Component">
 <em class="property">class </em><code class="descclassname">Component.</code><code class="descname">Component</code><a class="reference internal" href="_modules/Component.html#Component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Component.Component" title="Permalink to this definition">¶</a></dt>
@@ -55,73 +159,146 @@
 <dd><p>Removes a Node from the component&#8217;s nodes.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="Component.Component.setMaxConnections">
+<code class="descname">setMaxConnections</code><span class="sig-paren">(</span><em>N</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Component.html#Component.setMaxConnections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Component.Component.setMaxConnections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the Max Connections to the supplied value.</p>
 </dd></dl>
 
-<span class="target" id="module-AnalogComponent"></span><dl class="class">
+</dd></dl>
+
+</div>
+<div class="section" id="module-AnalogComponent">
+<span id="analog"></span><h2>Analog<a class="headerlink" href="#module-AnalogComponent" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
 <dt id="AnalogComponent.AnalogComponent">
 <em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">AnalogComponent</code><a class="reference internal" href="_modules/AnalogComponent.html#AnalogComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.AnalogComponent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class to describe all analog components. Only three types exist: Resistors, Capacitors, and Inductors. This module is designed to be extensible to include other types. Unless overridden by a subclass, Analog components will be limited to two connections.</p>
+<dd><p>Class to describe all analog components. Only three types exist: Resistors, Capacitors, and Inductors. This module is designed to be extensible to include other types. Unless overridden by a subclass, Analog components will be limited to two connections.
+The direction of current flow is left undefined and decided by the analyzer.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="AnalogComponent.Capacitor">
+<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Capacitor</code><span class="sig-paren">(</span><em>C</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Capacitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Capacitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for a capacitor. Impedance expressed in Laplace domain. Capacitance in microFarads.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="AnalogComponent.Inductor">
+<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Inductor</code><span class="sig-paren">(</span><em>L</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Inductor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Inductor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for an Inductor. Impedance expressed in Laplace domain. Inductance in milliHenrys.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="AnalogComponent.Resistor">
 <em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Resistor</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Resistor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Resistor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class for a resistor. Transfer function is a purely proportional relation.</p>
+<dd><p>Class for a resistor. Impedance is a purely proportional relation. Resistance in Ohms.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-Supply">
+<span id="supplies"></span><h2>Supplies<a class="headerlink" href="#module-Supply" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Supply.ACCurrentSupply">
+<em class="property">class </em><code class="descclassname">Supply.</code><code class="descname">ACCurrentSupply</code><span class="sig-paren">(</span><em>I</em>, <em>F</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Supply.html#ACCurrentSupply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Supply.ACCurrentSupply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to define an AC Current supply. The voltage supplied is a waveform output with peak current I and frequency F. Calling</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Vs</span> <span class="o">=</span> <span class="n">ACCurrentSupply</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Will create a 10A 60Hz Voltage supply in the circuit.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Supply.ACVoltageSupply">
+<em class="property">class </em><code class="descclassname">Supply.</code><code class="descname">ACVoltageSupply</code><span class="sig-paren">(</span><em>V</em>, <em>F</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Supply.html#ACVoltageSupply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Supply.ACVoltageSupply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to define an AC voltage supply. The voltage supplied is a waveform output with peak voltage V and frequency F. Calling</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Vs</span> <span class="o">=</span> <span class="n">ACVoltageSupply</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Will create a 120V 60Hz Voltage supply in the circuit.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Supply.DCCurrentSupply">
+<em class="property">class </em><code class="descclassname">Supply.</code><code class="descname">DCCurrentSupply</code><span class="sig-paren">(</span><em>I</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Supply.html#DCCurrentSupply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Supply.DCCurrentSupply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to define a DC Current supply. The current specified is the constant output of the supply.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Supply.DCVoltageSupply">
+<em class="property">class </em><code class="descclassname">Supply.</code><code class="descname">DCVoltageSupply</code><span class="sig-paren">(</span><em>V</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Supply.html#DCVoltageSupply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Supply.DCVoltageSupply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to define a DC voltage supply. The voltage specified is the constant output of the supply.</p>
+</dd></dl>
+
+</div>
+</div>
 
 
+           </div>
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="home.html">Documentation overview</a><ul>
-      <li>Previous: <a href="EquationSolver.html" title="previous chapter">SuperPAC Circuit Solutions</a></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/CircuitElements.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Nodes.html" class="btn btn-neutral float-right" title="Nodes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="EquationSolver.html" class="btn btn-neutral" title="SuperPAC Circuit Solutions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Owen Hempel.
+
     </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2016, Owen Hempel.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
-      
-      |
-      <a href="_sources/CircuitElements.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
-    
-  </body>
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

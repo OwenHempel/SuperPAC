@@ -34,3 +34,11 @@ class Component:
 
 		print(status)
 
+	def setMaxConnections(self, N):
+		'''
+		Changes the Max Connections to the supplied value.
+		'''
+		self.MaxConnections = N
+
+	
+

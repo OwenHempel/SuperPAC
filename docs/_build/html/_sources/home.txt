@@ -14,6 +14,7 @@ Contents:
    DocStandards
    EquationSolver
    CircuitElements
+   Nodes
 
 
 Indices and tables
