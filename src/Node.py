@@ -1,7 +1,3 @@
-
-
-
-
 class Node:
 	'''
 	**Description:** Class defining a circuit node, which is the intersection of two or components. A node has N Connections, where N is the number of connected components. If a component does not have a node to attach to, a new node will be created.
@@ -10,19 +6,18 @@ class Node:
 	* Connections: Defines which Connections are connected to the node.
 	* Voltage: If set, The node's reference voltage is held at this value. 
 	'''
-	def __init__(self):
-		from sympy import Symbol
+	def __init__(self, Symbol):
 		'''
-		Constructor method for the class. Initializes to no Connections, and voltage set to None.
+		Constructor method for the class. Initializes to no Connections, and voltage set to None. A sympy Symbol must be passed to the Node, which it will assign as its voltage.
 		'''
 		self.Connections  = []
-		self.V = Symbol('v')
+		self.V = Symbol
 		print("Node Created")
 
 	def Nconnect(self, component):
 		'''
 		Args:
-
+			component (Component)
 		Returns: 
 			Status (String): Describes the status of the connection (successful or otherwise)
 

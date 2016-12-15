@@ -9,5 +9,6 @@ class Path:
 		Basic constructor. Initializes with Components empty.
 		'''
 		self.Components = []
+		self.Current = 
 
 
