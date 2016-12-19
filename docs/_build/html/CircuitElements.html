@@ -88,12 +88,13 @@
 <li class="toctree-l1"><a class="reference internal" href="DocStandards.html">Documentation Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EquationSolver.html">SuperPAC Circuit Solutions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Circuit Elements</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-Component">Components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-AnalogComponent">Analog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-Supply">Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analog">Analog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supplies">Supplies</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Nodes.html">Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TODOs.html">SuperPac TODO List</a></li>
 </ul>
 
             
@@ -141,9 +142,10 @@
   <div class="section" id="circuit-elements">
 <h1>Circuit Elements<a class="headerlink" href="#circuit-elements" title="Permalink to this headline">¶</a></h1>
 <p>Circuit Elements are defined here as any component you can place in your circuit.</p>
-<div class="section" id="module-Component">
-<span id="components"></span><h2>Components<a class="headerlink" href="#module-Component" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<p>Components is the high level class that all (Analog and digital) component inherit. It only defines behaviours that all components share, namely connecting and disconnecting to nodes.</p>
+<span class="target" id="module-Component"></span><dl class="class">
 <dt id="Component.Component">
 <em class="property">class </em><code class="descclassname">Component.</code><code class="descname">Component</code><a class="reference internal" href="_modules/Component.html#Component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Component.Component" title="Permalink to this definition">¶</a></dt>
 <dd><p>Circuit Component Base class. provides the absolute minimum to meet the definition of a component in a circuit.</p>
@@ -168,9 +170,10 @@
 </dd></dl>
 
 </div>
-<div class="section" id="module-AnalogComponent">
-<span id="analog"></span><h2>Analog<a class="headerlink" href="#module-AnalogComponent" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<div class="section" id="analog">
+<h2>Analog<a class="headerlink" href="#analog" title="Permalink to this headline">¶</a></h2>
+<p>Analog Components and each subclass define the characteristics of each type of component. Using these characteristics, an analysis module can set values. No analog component should be performing any sort of calculations of its values. That way, the solving engine can be independent of the component type.</p>
+<span class="target" id="module-AnalogComponent"></span><dl class="class">
 <dt id="AnalogComponent.AnalogComponent">
 <em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">AnalogComponent</code><a class="reference internal" href="_modules/AnalogComponent.html#AnalogComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.AnalogComponent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to describe all analog components. Only three types exist: Resistors, Capacitors, and Inductors. This module is designed to be extensible to include other types. Unless overridden by a subclass, Analog components will be limited to two connections.
@@ -196,9 +199,10 @@ The direction of current flow is left undefined and decided by the analyzer.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-Supply">
-<span id="supplies"></span><h2>Supplies<a class="headerlink" href="#module-Supply" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<div class="section" id="supplies">
+<h2>Supplies<a class="headerlink" href="#supplies" title="Permalink to this headline">¶</a></h2>
+<p>Similar to Components, supplies define types of supply.</p>
+<span class="target" id="module-Supply"></span><dl class="class">
 <dt id="Supply.ACCurrentSupply">
 <em class="property">class </em><code class="descclassname">Supply.</code><code class="descname">ACCurrentSupply</code><span class="sig-paren">(</span><em>I</em>, <em>F</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Supply.html#ACCurrentSupply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Supply.ACCurrentSupply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to define an AC Current supply. The voltage supplied is a waveform output with peak current I and frequency F. Calling</p>

@@ -15,6 +15,7 @@ Contents:
    EquationSolver
    CircuitElements
    Nodes
+   TODOs
 
 
 Indices and tables

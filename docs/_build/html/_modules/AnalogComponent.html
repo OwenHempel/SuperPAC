@@ -88,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../EquationSolver.html">SuperPAC Circuit Solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CircuitElements.html">Circuit Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Nodes.html">Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TODOs.html">SuperPac TODO List</a></li>
 </ul>
 
             
@@ -148,8 +149,13 @@
 		<span class="bp">self</span><span class="o">.</span><span class="n">MaxConnections</span> <span class="o">=</span> <span class="mi">2</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span> <span class="o">=</span> <span class="p">[]</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="kc">None</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="kc">None</span></div>
+		<span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="kc">None</span>
 
+	<span class="k">def</span> <span class="nf">setCurrent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">I</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">I</span>
+
+	<span class="k">def</span> <span class="nf">setVoltage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">V</span></div>
 
 
 <div class="viewcode-block" id="Resistor"><a class="viewcode-back" href="../CircuitElements.html#AnalogComponent.Resistor">[docs]</a><span class="k">class</span> <span class="nc">Resistor</span><span class="p">(</span><span class="n">AnalogComponent</span><span class="p">):</span>
@@ -161,7 +167,7 @@
 		<span class="bp">self</span><span class="o">.</span><span class="n">MaxConnections</span> <span class="o">=</span> <span class="mi">2</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span> <span class="o">=</span> <span class="p">[]</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">R</span> <span class="o">=</span> <span class="n">R</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">Impedance</span> <span class="o">=</span> <span class="s1">&#39;R&#39;</span></div>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Impedance</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Capacitor"><a class="viewcode-back" href="../CircuitElements.html#AnalogComponent.Capacitor">[docs]</a><span class="k">class</span> <span class="nc">Capacitor</span><span class="p">(</span><span class="n">AnalogComponent</span><span class="p">):</span>
 	<span class="sd">&#39;&#39;&#39;</span>
@@ -171,7 +177,7 @@
 		<span class="bp">self</span><span class="o">.</span><span class="n">MaxConnections</span> <span class="o">=</span> <span class="mi">2</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span> <span class="o">=</span> <span class="p">[]</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">C</span> <span class="o">=</span> <span class="n">C</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">Impedance</span> <span class="o">=</span> <span class="s1">&#39;1/(s*C)&#39;</span></div>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Impedance</span> <span class="o">=</span> <span class="s1">&#39;1/(s*&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;)&#39;</span></div>
 
 <div class="viewcode-block" id="Inductor"><a class="viewcode-back" href="../CircuitElements.html#AnalogComponent.Inductor">[docs]</a><span class="k">class</span> <span class="nc">Inductor</span><span class="p">(</span><span class="n">AnalogComponent</span><span class="p">):</span>
 	<span class="sd">&#39;&#39;&#39;</span>
@@ -181,7 +187,7 @@
 		<span class="bp">self</span><span class="o">.</span><span class="n">MaxConnections</span> <span class="o">=</span> <span class="mi">2</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span> <span class="o">=</span> <span class="p">[]</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">L</span> <span class="o">=</span> <span class="n">L</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">Impedance</span> <span class="o">=</span> <span class="s1">&#39;L*s&#39;</span></div>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Impedance</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;*s&#39;</span></div>
 
 		
 </pre></div>
