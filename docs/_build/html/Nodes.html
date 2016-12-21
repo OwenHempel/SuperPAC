@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Nodes &mdash; SuperPAC 0.1a documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SuperPAC 0.1a documentation" href="index.html"/>
+        <link rel="next" title="SuperPac TODO List" href="TODOs.html"/>
+        <link rel="prev" title="Circuit Elements" href="CircuitElements.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="home.html" class="icon icon-home"> SuperPAC
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="DocStandards.html">Documentation Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EquationSolver.html">SuperPAC Circuit Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CircuitElements.html">Circuit Elements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TODOs.html">SuperPac TODO List</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="home.html">SuperPAC</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="home.html">Docs</a> &raquo;</li>
+      
+    <li>Nodes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Nodes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Node">
+<span id="nodes"></span><h1>Nodes<a class="headerlink" href="#module-Node" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Node.Node">
+<em class="property">class </em><code class="descclassname">Node.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>Symbol</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Node.html#Node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Description:</strong> Class defining a circuit node, which is the intersection of two or components. A node has N Connections, where N is the number of connected components. If a component does not have a node to attach to, a new node will be created.
+Has the following properties:</p>
+<ul class="simple">
+<li>Connections: Defines which Connections are connected to the node.</li>
+<li>Voltage: If set, The node&#8217;s reference voltage is held at this value.</li>
+</ul>
+<dl class="method">
+<dt id="Node.Node.Nconnect">
+<code class="descname">Nconnect</code><span class="sig-paren">(</span><em>component</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Node.html#Node.Nconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node.Nconnect" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Args:</dt>
+<dd>component (Component)</dd>
+<dt>Returns: </dt>
+<dd>Status (String): Describes the status of the connection (successful or otherwise)</dd>
+</dl>
+<p>Method to add a component to the node, if it is not already connected to the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Node.Node.Ndisconnect">
+<code class="descname">Ndisconnect</code><span class="sig-paren">(</span><em>component</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Node.html#Node.Ndisconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node.Ndisconnect" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Returns: </dt>
+<dd>Status (String): Describes the status of the connection (successful or otherwise)</dd>
+</dl>
+<p>Method to disconnect a component from the node, if it is connected.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Node.Node.getConnections">
+<code class="descname">getConnections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Node.html#Node.getConnections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node.getConnections" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Returns:</dt>
+<dd>Connections (List): List of all Connections connected to the node</dd>
+</dl>
+<p>Accessor. Returns all of the Connections connected to the node in a list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Node.Node.ground">
+<code class="descname">ground</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Node.html#Node.ground"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node.ground" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutator. Sets the voltage to ground (0).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Node.Node.setVoltage">
+<code class="descname">setVoltage</code><span class="sig-paren">(</span><em>Voltage</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Node.html#Node.setVoltage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node.setVoltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutator. Sets the voltage to the supplied value.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="TODOs.html" class="btn btn-neutral float-right" title="SuperPac TODO List" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CircuitElements.html" class="btn btn-neutral" title="Circuit Elements" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Owen Hempel.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
