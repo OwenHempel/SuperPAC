@@ -25,14 +25,17 @@ def ParallelEquivalent(Components):
 	return Rtot
 
 def calcCurrent(Component):
-	Current = (Component.Nodes[0]-Component.Nodes[1])/sympy.sympify(Component.Impedance)
-	Component.setCurrent(Current)
+	try:
+		int(Component.V)
+	except:
+		Current = (Component.Nodes[0].V-Component.Nodes[1].V)/sympy.sympify(Component.Impedance)
+		Component.setCurrent(Current)
 
 def calcVoltage(Component):
 	try:
-		int(Component.)
-	except ValueError:
-		Voltage = (Component.Nodes[0].V-Component.Nodes[1].V)/sympy.sympify(Component.Impedance)
+		int(Component.I)
+	except:
+		Voltage = (Component.Nodes[0].V-Component.Nodes[1].V)
 		Component.setVoltage(Voltage)
 
 def KirchoffCurrentLaw(Node):

@@ -129,7 +129,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/CircuitElements.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/CircuitElements.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -141,10 +141,10 @@
             
   <div class="section" id="circuit-elements">
 <h1>Circuit Elements<a class="headerlink" href="#circuit-elements" title="Permalink to this headline">¶</a></h1>
-<p>Circuit Elements are defined here as any component you can place in your circuit.</p>
+<p>Circuit Elements are defined in SuperPAC as any component you can place in your circuit.</p>
 <div class="section" id="components">
 <h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
-<p>Components is the high level class that all (Analog and digital) component inherit. It only defines behaviours that all components share, namely connecting and disconnecting to nodes.</p>
+<p>Components is the high level class that all components (Analog and Digital, as well as Supplies) inherit. It only defines behaviours that all components share, namely connecting and disconnecting to nodes.</p>
 <span class="target" id="module-Component"></span><dl class="class">
 <dt id="Component.Component">
 <em class="property">class </em><code class="descclassname">Component.</code><code class="descname">Component</code><a class="reference internal" href="_modules/Component.html#Component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Component.Component" title="Permalink to this definition">¶</a></dt>
@@ -201,7 +201,7 @@ The direction of current flow is left undefined and decided by the analyzer.</p>
 </div>
 <div class="section" id="supplies">
 <h2>Supplies<a class="headerlink" href="#supplies" title="Permalink to this headline">¶</a></h2>
-<p>Similar to Components, supplies define types of supply.</p>
+<p>Similar to Analog Components, supplies define types of supply. We treat Supplies as</p>
 <span class="target" id="module-Supply"></span><dl class="class">
 <dt id="Supply.ACCurrentSupply">
 <em class="property">class </em><code class="descclassname">Supply.</code><code class="descname">ACCurrentSupply</code><span class="sig-paren">(</span><em>I</em>, <em>F</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Supply.html#ACCurrentSupply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Supply.ACCurrentSupply" title="Permalink to this definition">¶</a></dt>

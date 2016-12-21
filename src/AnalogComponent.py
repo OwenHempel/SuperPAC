@@ -32,6 +32,8 @@ class Resistor(AnalogComponent):
 		self.Nodes = []
 		self.R = R
 		self.Impedance = str(R)
+		self.I = None
+		self.V = None
 
 class Capacitor(AnalogComponent):
 	'''
@@ -42,6 +44,8 @@ class Capacitor(AnalogComponent):
 		self.Nodes = []
 		self.C = C
 		self.Impedance = '1/(s*'+str(C)+')'
+		self.I = None
+		self.V = None
 
 class Inductor(AnalogComponent):
 	'''
@@ -52,5 +56,7 @@ class Inductor(AnalogComponent):
 		self.Nodes = []
 		self.L = L
 		self.Impedance = str(L)+'*s'
+		self.I = None
+		self.V = None
 
 		

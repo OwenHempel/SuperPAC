@@ -28,21 +28,24 @@ R2.connect(N3)
 
 V1.connect(N1)
 V1.connect(N3)
-N1.ground()
 
-VN2 = sympy.solve(N1.V - N3.V - V1.VSupply)
-ImpR = sympy.sympify(R1.Impedance)
-ImpC = sympy.sympify(C1.Impedance)
-ImpR2 = sympy.sympify(R2.Impedance)
+comps = [R1,R2]
+
+N3.ground()
+
+#print (Analyzer.SeriesEquivalent(path), Analyzer.ParallelEquivalent(path))
+
+for C in comps:
+	Analyzer.calcCurrent(C)
+	Analyzer.calcVoltage(C)
+
+print (R1.V + R2.V)
+
+VN2 = sympy.solve(R1.V - R2.V)
 
 
-path = [C1, C2]
+print(VN2)
 
-print (Analyzer.SeriesEquivalent(path), Analyzer.ParallelEquivalent(path))
-
-print (N1.V, N2.V, N3.V)
-
-int('d')
 
 
 

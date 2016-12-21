@@ -4,12 +4,7 @@ SuperPAC Circuit Solutions
 Basic Representations
 ---------------------
 
-Analog Circuit Solution
-^^^^^^^^^^^^^^^^^^^^^^^
-
-SuperPAC uses SymPy to create equations at given nodes. Each node has a number of paths that connect it to the other nodes. Along each path will be a series of Components. Elements each have equations for voltage and current. By iteratively calculating each node's Voltage and Current, equations can be generated which can be solved by SymPy's solver.
-
-
+SuperPAC uses SymPy to create equations at given nodes. Each node has a number of paths that connect it to the other nodes. Along each path will be a series of :ref:`Components`. Elements each have equations for voltage and current. By calculating each node in terms of the reference node, voltage at an arbitrary point can be calculated. 
 
 Domains
 -------
