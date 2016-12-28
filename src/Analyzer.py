@@ -3,7 +3,6 @@ The analyzer module defines functions to analyze a circuit to find paths and mes
 
 '''
 import sympy
-
 def countConnections(Node):
 	return len(Node.Connections)
 

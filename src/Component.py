@@ -34,6 +34,37 @@ class Component:
 
 		print(status)
 
+	def isParallel(self,Component):
+		'''
+		Test for if two components are in parallel.
+
+		Returns:
+			* True if each component's Nodes list have the same contents.
+			* False otherwise
+		'''
+		if set(self.Nodes) == set(Component.Nodes):
+			return True
+
+		else:
+			return False
+
+	def isSeries(self, Component):
+		'''
+		Test for if two components are in Series.
+
+		Returns:
+			* True if each component's Nodes list have only one node in common
+			* False otherwise
+		'''
+		Result = [False, False]
+		for node in self.Nodes:
+			if node in Component.Nodes:
+				Result[self.Nodes.index(node)] = True
+		if (Result[0] != Result[1]):
+			return True
+		else:
+			return False
+
 	def setMaxConnections(self, N):
 		'''
 		Changes the Max Connections to the supplied value.

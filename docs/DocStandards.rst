@@ -79,7 +79,7 @@ Arguments and their types, as well as returns and their types must be documented
   def bake(time, temp):
   '''
   Args:
-	Time (list): Rule, read from the sql database 
+	  Time (list): Rule, read from the sql database 
   Returns:
   	Temp: noOverlap
   Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits
@@ -89,10 +89,8 @@ Arguments and their types, as well as returns and their types must be documented
 Which makes:
 
 Args:
-	Row (list): Rule, read from the sql database 
+  Time (list): Rule, read from the sql database 
 Returns:
-	Bool: noOverlap
+  Temp: noOverlap
   
 Returns true if one of the rule limits falls between the limits of another rule OR if the rules have the same limits
-	
-

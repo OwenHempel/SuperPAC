@@ -170,6 +170,37 @@
 
 		<span class="nb">print</span><span class="p">(</span><span class="n">status</span><span class="p">)</span></div>
 
+<div class="viewcode-block" id="Component.isParallel"><a class="viewcode-back" href="../CircuitElements.html#Component.Component.isParallel">[docs]</a>	<span class="k">def</span> <span class="nf">isParallel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">Component</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Test for if two components are in parallel.</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			* True if each component&#39;s Nodes list have the same contents.</span>
+<span class="sd">			* False otherwise</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+		<span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">Component</span><span class="o">.</span><span class="n">Nodes</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="Component.isSeries"><a class="viewcode-back" href="../CircuitElements.html#Component.Component.isSeries">[docs]</a>	<span class="k">def</span> <span class="nf">isSeries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Component</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Test for if two components are in Series.</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			* True if each component&#39;s Nodes list have only one node in common</span>
+<span class="sd">			* False otherwise</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+		<span class="n">Result</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+		<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">Component</span><span class="o">.</span><span class="n">Nodes</span><span class="p">:</span>
+				<span class="n">Result</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">node</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">Result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">Result</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span></div>
+
 <div class="viewcode-block" id="Component.setMaxConnections"><a class="viewcode-back" href="../CircuitElements.html#Component.Component.setMaxConnections">[docs]</a>	<span class="k">def</span> <span class="nf">setMaxConnections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
 		<span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">		Changes the Max Connections to the supplied value.</span>

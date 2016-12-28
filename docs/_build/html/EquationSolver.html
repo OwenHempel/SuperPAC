@@ -87,7 +87,10 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="DocStandards.html">Documentation Standards</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SuperPAC Circuit Solutions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-representations">Basic Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-representations">Basic Representations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analog-circuit-solution">Analog Circuit Solution</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#domains">Domains</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#frequency-domain">Frequency Domain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#time-domain">Time Domain</a></li>
@@ -146,7 +149,10 @@
 <h1>SuperPAC Circuit Solutions<a class="headerlink" href="#superpac-circuit-solutions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="basic-representations">
 <h2>Basic Representations<a class="headerlink" href="#basic-representations" title="Permalink to this headline">¶</a></h2>
-<p>SuperPAC uses SymPy to create equations at given nodes. Each node has a number of paths that connect it to the other nodes. Along each path will be a series of <span class="xref std std-ref">Components</span>. Elements each have equations for voltage and current. By calculating each node in terms of the reference node, voltage at an arbitrary point can be calculated.</p>
+<div class="section" id="analog-circuit-solution">
+<h3>Analog Circuit Solution<a class="headerlink" href="#analog-circuit-solution" title="Permalink to this headline">¶</a></h3>
+<p>SuperPAC uses SymPy to create equations at given nodes. Each node has a number of paths that connect it to the other nodes. Along each path will be a series of Components. Elements each have equations for voltage and current. By iteratively calculating each node&#8217;s Voltage and Current, equations can be generated which can be solved by SymPy&#8217;s solver.</p>
+</div>
 </div>
 <div class="section" id="domains">
 <h2>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h2>

@@ -22,6 +22,8 @@ N3 = Node.Node(sympy.Symbol('V3'))
 
 R1.connect(N1)
 R1.connect(N2)
+C1.connect(N1)
+C1.connect(N2)
 
 R2.connect(N2)
 R2.connect(N3)
@@ -39,12 +41,12 @@ for C in comps:
 	Analyzer.calcCurrent(C)
 	Analyzer.calcVoltage(C)
 
-print (R1.V + R2.V)
 
-VN2 = sympy.solve(R1.V - R2.V)
+print (R1.isSeries(C1))
+print (R1.isSeries(R2))
+print (R1.isParallel(C1))
+print (R1.isParallel(R2))
 
-
-print(VN2)
 
 
 

@@ -51,7 +51,7 @@ class ACCurrentSupply(Component.Component):
 
 	  Vs = ACCurrentSupply(10, 60)
 	
-	Will create a 10A 60Hz Voltage supply in the circuit. 
+	Will create a 10A 60Hz Current supply in the circuit. 
 	'''
 	def __init__(self, I, F):
 		'''
