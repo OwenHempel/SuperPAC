@@ -11,6 +11,7 @@ class DCVoltageSupply(Component.Component):
 		self.MaxConnections = 2
 		self.Nodes = []
 		self.VSupply = V
+		self.Frequency = 0
 
 class ACVoltageSupply(Component.Component):
 	'''
@@ -42,6 +43,7 @@ class DCCurrentSupply(Component.Component):
 		self.MaxConnections = 2
 		self.Nodes = []
 		self.ISupply = I
+		self.Frequency = 0
 
 class ACCurrentSupply(Component.Component):
 	'''

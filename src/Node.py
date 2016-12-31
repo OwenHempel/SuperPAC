@@ -10,6 +10,7 @@ class Node:
 		'''
 		Constructor method for the class. Initializes to no Connections, and voltage set to None. A sympy Symbol must be passed to the Node, which it will assign as its voltage.
 		'''
+		self.Name = str(Symbol)
 		self.Connections  = []
 		self.V = Symbol
 		print("Node Created")
@@ -58,6 +59,9 @@ class Node:
 		Mutator. Sets the voltage to the supplied value.
 		'''
 		self.V = Voltage
+
+	def countConnections(self):
+		return len(self.Connections)
 
 	def ground(self):
 		'''

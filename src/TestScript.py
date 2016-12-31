@@ -3,22 +3,25 @@
 import AnalogComponent
 import Node
 import Supply
-import sympy
-import Analyzer
+import Circuit
 
-R1 = AnalogComponent.Resistor(8)
-R2 = AnalogComponent.Resistor(8)
-C2 = AnalogComponent.Capacitor(1000)
-C1 = AnalogComponent.Capacitor(1000)
+
+R1 = AnalogComponent.Resistor(8, 'R1')
+R2 = AnalogComponent.Resistor(8, 'R2')
+C2 = AnalogComponent.Capacitor(1000, 'C2')
+C1 = AnalogComponent.Capacitor(1000, 'C1')
 
 V1 = Supply.DCVoltageSupply(12)
 
 
-
+Cct = Circuit.Circuit()
 
 N1 = Node.Node(sympy.Symbol('V1'))
+Cct.addNode(N1)
 N2 = Node.Node(sympy.Symbol('V2'))
+Cct.addNode(N2)
 N3 = Node.Node(sympy.Symbol('V3'))
+Cct.addNode(N3)
 
 R1.connect(N1)
 R1.connect(N2)
@@ -30,22 +33,11 @@ R2.connect(N3)
 
 V1.connect(N1)
 V1.connect(N3)
-
-comps = [R1,R2]
-
 N3.ground()
 
-#print (Analyzer.SeriesEquivalent(path), Analyzer.ParallelEquivalent(path))
-
-for C in comps:
-	Analyzer.calcCurrent(C)
-	Analyzer.calcVoltage(C)
+print(type(R1) == AnalogComponent.Resistor, type(C1))
 
 
-print (R1.isSeries(C1))
-print (R1.isSeries(R2))
-print (R1.isParallel(C1))
-print (R1.isParallel(R2))
 
 
 
