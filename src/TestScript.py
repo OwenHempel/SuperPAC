@@ -4,6 +4,7 @@ import AnalogComponent
 import Node
 import Supply
 import Circuit
+import sympy
 
 
 R1 = AnalogComponent.Resistor(8, 'R1')
@@ -34,6 +35,12 @@ R2.connect(N3)
 V1.connect(N1)
 V1.connect(N3)
 N3.ground()
+
+ResS = Cct.SeriesEquivalent([R1,R2, C1])
+
+ResP = Cct.ParallelEquivalent([R2, R1, C1,C2])
+
+print(str(ResS) + '\n'+  str(ResP))
 
 print(type(R1) == AnalogComponent.Resistor, type(C1))
 

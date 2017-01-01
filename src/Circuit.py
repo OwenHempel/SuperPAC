@@ -1,3 +1,5 @@
+import sympy
+
 class Circuit:
 	'''
 	Class to define a Circuit object, which will be initialized empty and filled in as the circuit elements are placed.
@@ -23,14 +25,14 @@ class Circuit:
 		'''Calculates the sum of resistances in a series path. Path is a list of components'''
 		Rtot = 0
 		for Component in Components:
-			Rtot += sympy.sympify(R.Impedance)
+			Rtot += sympy.sympify(Component.Impedance)
 		return Rtot
 
 	def ParallelEquivalent(self, Components):
 		'''Calculates the equivalent impedance of a set of resistors. Components is the set of components that share two nodes.'''
 		Rtot = sympy.sympify(Components[0].Impedance)
-		for R in Components[1:]:
-			im = sympy.sympify(R.Impedance)
+		for Component in Components[1:]:
+			im = sympy.sympify(Component.Impedance)
 			Rtot = (Rtot*im)/(Rtot + im)
 		return Rtot
 
@@ -49,8 +51,10 @@ class Circuit:
 			Component.setVoltage(Voltage)
 
 	def reduce(self, Node):
-		for Component in Node.Connections:
-			for Component2 in Node.Connections.remove(Component)
+		Targets = Node.Connections
+		for Component in Targets:
+			Targets.remove(Component)
+			for Component2 in Targets:
 				if Component.isSeries(Component2):
 					pass
 				if Component.isParallel(Component2):

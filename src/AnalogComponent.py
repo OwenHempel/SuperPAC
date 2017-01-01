@@ -48,6 +48,7 @@ class Capacitor(AnalogComponent):
 		self.MaxConnections = 2
 		self.Nodes = []
 		self.C = C
+		self.Impedance = '1/(s*'+str(self.C)+')'
 		self.I = None
 		self.V = None
 
