@@ -23,18 +23,20 @@ class Circuit:
 
 	def SeriesEquivalent(self, Components):
 		'''Calculates the sum of resistances in a series path. Path is a list of components'''
-		Rtot = 0
+		Ztot = 0
 		for Component in Components:
-			Rtot += sympy.sympify(Component.Impedance)
-		return Rtot
+			Ztot += Component.Impedance
+
+		return Ztot
 
 	def ParallelEquivalent(self, Components):
 		'''Calculates the equivalent impedance of a set of resistors. Components is the set of components that share two nodes.'''
-		Rtot = sympy.sympify(Components[0].Impedance)
-		for Component in Components[1:]:
-			im = sympy.sympify(Component.Impedance)
-			Rtot = (Rtot*im)/(Rtot + im)
-		return Rtot
+		Zinv = 0
+		Ztot = 0
+		for Component in Components:
+			Zinv += Component.Impedance**-1
+			Ztot = Zinv**-1
+		return Ztot
 
 	def calcCurrent(self, Component):
 		try:

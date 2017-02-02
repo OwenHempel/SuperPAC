@@ -11,7 +11,8 @@ R1 = AnalogComponent.Resistor(8, 'R1')
 R2 = AnalogComponent.Resistor(8, 'R2')
 C2 = AnalogComponent.Capacitor(1000, 'C2')
 C1 = AnalogComponent.Capacitor(1000, 'C1')
-
+L1 = AnalogComponent.Inductor(5, 'L1')
+L2 = AnalogComponent.Inductor(5, 'L2')
 V1 = Supply.DCVoltageSupply(12)
 
 
@@ -36,18 +37,8 @@ V1.connect(N1)
 V1.connect(N3)
 N3.ground()
 
-ResS = Cct.SeriesEquivalent([R1,R2, C1])
+ResS = Cct.SeriesEquivalent([R1,C2, C1, L1, L2])
 
-ResP = Cct.ParallelEquivalent([R2, R1, C1,C2])
+ResP = Cct.ParallelEquivalent([R1, R2, L1, L2])
 
-print(str(ResS) + '\n'+  str(ResP))
-
-print(type(R1) == AnalogComponent.Resistor, type(C1))
-
-
-
-
-
-
-
-
+print(str(ResS) + '\n' + str(ResP))

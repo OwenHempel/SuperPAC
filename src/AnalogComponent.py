@@ -1,5 +1,5 @@
 import Component
-
+import numpy
 
 class AnalogComponent(Component.Component):
 	'''
@@ -18,10 +18,15 @@ class AnalogComponent(Component.Component):
 		self.R = R
 		self.C = C
 		self.L = L
+		self.calcImpedance()
+
 
 	def setCurrent(self, I):
 		self.I = I
-
+	def calcImpedance(self):
+		self.Impedance = self.R + self.L*1j
+		if not(self.C == 0):
+			self.Impedance += -1j*self.C**-1
 	def setVoltage(self, V):
 		self.V = V
 
@@ -34,10 +39,11 @@ class Resistor(AnalogComponent):
 		self.Name = Name
 		self.MaxConnections = 2
 		self.Nodes = []
-		self.R = R
-		self.Impedance = str(R)
+		self.R = float(R)
+		self.L, self.C = 0, 0
 		self.I = None
 		self.V = None
+		self.calcImpedance()
 
 class Capacitor(AnalogComponent):
 	'''
@@ -47,8 +53,9 @@ class Capacitor(AnalogComponent):
 		self.Name = Name
 		self.MaxConnections = 2
 		self.Nodes = []
-		self.C = C
-		self.Impedance = '1/(s*'+str(self.C)+')'
+		self.C = float(C)
+		self.R, self.L = 0,0
+		self.calcImpedance()
 		self.I = None
 		self.V = None
 
@@ -60,8 +67,9 @@ class Inductor(AnalogComponent):
 		self.Name = Name
 		self.MaxConnections = 2
 		self.Nodes = []
-		self.L = L
-		self.Impedance = str(L)+'*s'
+		self.L = float(L)
+		self.R, self.C = 0,0
+		self.calcImpedance()
 		self.I = None
 		self.V = None
 
