@@ -37,6 +37,7 @@ V1.connect(N1)
 V1.connect(N3)
 N3.ground()
 
+
 ResS = Cct.SeriesEquivalent([R1,C2, C1, L1, L2])
 
 ResP = Cct.ParallelEquivalent([R1, R2, L1, L2])
