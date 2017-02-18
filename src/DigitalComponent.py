@@ -18,4 +18,4 @@ class Switch(DigitalComponent):
 	def __init__(self, Poles = 1, Throws = 1, State = False):
 		self.MaxConnections = (Poles+1)*Throws
 		self.Nodes = []
-		self.state = State
+		self.State = State

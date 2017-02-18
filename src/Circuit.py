@@ -1,4 +1,5 @@
 import sympy
+import AnalogComponent
 
 class Circuit:
 	'''
@@ -23,19 +24,22 @@ class Circuit:
 	def SeriesEquivalent(self, Components):
 		'''Calculates the sum of resistances in a series path. Path is a list of components'''
 		Ztot = 0
+		Name = ""
 		for Component in Components:
 			Ztot += Component.Impedance
-
-		return Ztot
+			Name += Component.Name
+		return AnalogComponent.AnalogComponent(Name, Z = Ztot)
 
 	def ParallelEquivalent(self, Components):
 		'''Calculates the equivalent impedance of a set of resistors. Components is the set of components that share two nodes.'''
 		Zinv = 0
 		Ztot = 0
+		Name = ""
 		for Component in Components:
+			Name += Component.Name
 			Zinv += Component.Impedance**-1
 			Ztot = Zinv**-1
-		return Ztot
+		return AnalogComponent.AnalogComponent(Name, Z = Ztot)
 
 	def calcCurrent(self, Component):
 		try:
