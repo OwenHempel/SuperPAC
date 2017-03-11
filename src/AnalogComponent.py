@@ -6,7 +6,7 @@ class AnalogComponent(Component.Component):
 	Class to describe all analog components. Only three types exist: Resistors, Capacitors, and Inductors. This module is designed to be extensible to include other types. Unless overridden by a subclass, Analog components will be limited to two connections.
 	The direction of current flow is left undefined and decided by the analyzer.
 	'''
-	def __init__(self, Name, R = 0, L = 0, C = 0, Z = 0):
+	def __init__(self, Name, R = 0, L = 0, C = 0, Z = None):
 		'''
 		Basic Constructor. Sets MaxConnections to 2 and Nodes to empty.
 		'''
@@ -18,7 +18,7 @@ class AnalogComponent(Component.Component):
 		self.R = R
 		self.C = C
 		self.L = L
-		if Z == 0:
+		if Z == None:
 			self.calcImpedance()
 		else:
 			self.Impedance = Z

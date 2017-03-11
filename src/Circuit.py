@@ -11,15 +11,13 @@ class Circuit:
 		self.Nodes = {}
 
 	def addNode(self, Node):
-		if Node.Name in self.Nodes:
-			print("Error, That node name is already taken in this circuit!")
-		else: 
-			self.Nodes[Node.Name] = Node
+		NodeID = len(self.Nodes)
+		self.Nodes[NodeID] = Node
 
 	def addComponent(self, Component):
 		'''Adds the component to the circuit. GOTCHA: Ensuring the ID is unique is not handled here!'''
-		ID = len(Components)
-		self.Components[ID] = Component
+		ComponentID = len(self.Components)
+		self.Components[ComponentID] = Component
 
 	def SeriesEquivalent(self, Components):
 		'''Calculates the sum of resistances in a series path. Path is a list of components'''
