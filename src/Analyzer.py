@@ -2,9 +2,9 @@
 The analyzer module defines functions to analyze a circuit to find paths and meshes and to define the equations that describe the circuit.
 
 '''
-import sympy
 
-
+VoltageMatrix = []
+Current Matrix = []
 
 
 def KirchoffCurrentLaw(Node):

@@ -11,6 +11,7 @@ class Circuit:
 		self.Nodes = {}
 
 	def addNode(self, Node):
+		'''Adds the component to the circuit. GOTCHA: Ensuring the ID is unique is not handled here!'''
 		NodeID = len(self.Nodes)
 		self.Nodes[NodeID] = Node
 
@@ -18,6 +19,11 @@ class Circuit:
 		'''Adds the component to the circuit. GOTCHA: Ensuring the ID is unique is not handled here!'''
 		ComponentID = len(self.Components)
 		self.Components[ComponentID] = Component
+
+	def removeNode(self, Node):
+		if Node in self.Nodes[NodeID] for NodeID in self.Nodes:
+			del self.Nodes[NodeID]
+
 
 	def SeriesEquivalent(self, Components):
 		'''Calculates the sum of resistances in a series path. Path is a list of components'''
@@ -58,8 +64,11 @@ class Circuit:
 		for Component in Targets:
 			Targets.remove(Component)
 			for Component2 in Targets:
-				if Component.isSeries(Component2):
-					pass
 				if Component.isParallel(Component2):
+					Equivalent = self.ParallelEquivalent([Component, Component2])
+				elif Component.isSeries(Component2):
+					Equivalent = self.SeriesEquivalent([Component, Component2])
+				else:
 					pass
+
 

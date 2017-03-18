@@ -29,6 +29,8 @@ if __name__ == "__main__":
 	R1.connect(N2)
 	C1.connect(N1)
 	C1.connect(N2)
+	C2.connect(N1)
+	C2.connect(N2)
 
 	R2.connect(N2)
 	R2.connect(N3)
@@ -37,8 +39,9 @@ if __name__ == "__main__":
 	V1.connect(N3)
 	N3.ground()
 
+	Cct.addComponent(R1)
+	Cct.addComponent(R2)
+	Cct.addComponent(C1)
+	Cct.addComponent(C2)
 
-	ResS = Cct.SeriesEquivalent([C2, C1])
-	ResP = Cct.ParallelEquivalent([C2, C1])
-	print (C2.Impedance, C1.Impedance)
-	print (ResS, ResP, ResS.Impedance, ResP.Impedance)
+	print ( [Cct.Components[Key].Name for Key in Cct.Components])
