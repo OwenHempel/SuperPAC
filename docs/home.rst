@@ -15,7 +15,7 @@ Contents:
    Representations
    CircuitElements
    Nodes
-   Solutions
+   Circuits
    TODOs
 
 

@@ -12,9 +12,10 @@ Contents:
    :maxdepth: 2
    
    DocStandards
-   EquationSolver
+   Representations
    CircuitElements
    Nodes
+   Circuits
    TODOs
 
 

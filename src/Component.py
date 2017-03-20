@@ -56,11 +56,13 @@ class Component:
 			* True if each component's Nodes list have only one node in common
 			* False otherwise
 		'''
-		Result = [False, False]
+		Result = []
 		for node in self.Nodes:
+			if len(node.Connections)>2:
+				return False
 			if node in Component.Nodes:
-				Result[self.Nodes.index(node)] = True
-		if (Result[0] != Result[1]):
+				Result.append(True)
+		if (Result.count(True)==1):
 			return True
 		else:
 			return False

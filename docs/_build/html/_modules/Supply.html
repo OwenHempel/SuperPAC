@@ -85,9 +85,10 @@
             
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../DocStandards.html">Documentation Standards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EquationSolver.html">SuperPAC Circuit Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Representations.html">SuperPAC Circuit Solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CircuitElements.html">Circuit Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Nodes.html">Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circuits.html">Circuit Solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../TODOs.html">SuperPac TODO List</a></li>
 </ul>
 
@@ -146,7 +147,8 @@
 <span class="sd">		&#39;&#39;&#39;</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">MaxConnections</span> <span class="o">=</span> <span class="mi">2</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span> <span class="o">=</span> <span class="p">[]</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">VSupply</span> <span class="o">=</span> <span class="n">V</span></div>
+		<span class="bp">self</span><span class="o">.</span><span class="n">VSupply</span> <span class="o">=</span> <span class="n">V</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Frequency</span> <span class="o">=</span> <span class="mi">0</span></div>
 
 <div class="viewcode-block" id="ACVoltageSupply"><a class="viewcode-back" href="../CircuitElements.html#Supply.ACVoltageSupply">[docs]</a><span class="k">class</span> <span class="nc">ACVoltageSupply</span><span class="p">(</span><span class="n">Component</span><span class="o">.</span><span class="n">Component</span><span class="p">):</span>
 	<span class="sd">&#39;&#39;&#39;</span>
@@ -177,7 +179,8 @@
 <span class="sd">		&#39;&#39;&#39;</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">MaxConnections</span> <span class="o">=</span> <span class="mi">2</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">Nodes</span> <span class="o">=</span> <span class="p">[]</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">ISupply</span> <span class="o">=</span> <span class="n">I</span></div>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ISupply</span> <span class="o">=</span> <span class="n">I</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Frequency</span> <span class="o">=</span> <span class="mi">0</span></div>
 
 <div class="viewcode-block" id="ACCurrentSupply"><a class="viewcode-back" href="../CircuitElements.html#Supply.ACCurrentSupply">[docs]</a><span class="k">class</span> <span class="nc">ACCurrentSupply</span><span class="p">(</span><span class="n">Component</span><span class="o">.</span><span class="n">Component</span><span class="p">):</span>
 	<span class="sd">&#39;&#39;&#39;</span>
@@ -187,7 +190,7 @@
 
 <span class="sd">	  Vs = ACCurrentSupply(10, 60)</span>
 <span class="sd">	</span>
-<span class="sd">	Will create a 10A 60Hz Voltage supply in the circuit. </span>
+<span class="sd">	Will create a 10A 60Hz Current supply in the circuit. </span>
 <span class="sd">	&#39;&#39;&#39;</span>
 	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">F</span><span class="p">):</span>
 		<span class="sd">&#39;&#39;&#39;</span>

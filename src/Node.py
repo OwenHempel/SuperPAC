@@ -33,6 +33,8 @@ class Node:
 
 	def Ndisconnect(self, component):
 		'''
+		Args:
+			component (Component)
 		Returns: 
 			Status (String): Describes the status of the connection (successful or otherwise)
 
@@ -56,6 +58,9 @@ class Node:
 
 	def setVoltage(self, Voltage):
 		'''
+		Args:
+			Voltage (Numeric)
+			
 		Mutator. Sets the voltage to the supplied value.
 		'''
 		self.V = Voltage

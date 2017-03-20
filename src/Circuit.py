@@ -21,7 +21,7 @@ class Circuit:
 		self.Components[ComponentID] = Component
 
 	def removeNode(self, Node):
-		if Node in self.Nodes[NodeID] for NodeID in self.Nodes:
+		if Node in [self.Nodes[NodeID] for NodeID in self.Nodes]:
 			del self.Nodes[NodeID]
 
 
@@ -70,5 +70,6 @@ class Circuit:
 					Equivalent = self.SeriesEquivalent([Component, Component2])
 				else:
 					pass
+				print(Equivalent.Name, Equivalent.Impedance, Equivalent.Nodes)
 
 

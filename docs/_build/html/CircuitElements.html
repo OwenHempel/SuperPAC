@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="SuperPAC 0.1a documentation" href="index.html"/>
         <link rel="next" title="Nodes" href="Nodes.html"/>
-        <link rel="prev" title="SuperPAC Circuit Solutions" href="EquationSolver.html"/> 
+        <link rel="prev" title="SuperPAC Circuit Solutions" href="Representations.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -86,7 +86,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="DocStandards.html">Documentation Standards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EquationSolver.html">SuperPAC Circuit Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Representations.html">SuperPAC Circuit Solutions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Circuit Elements</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#components">Components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#analog">Analog</a></li>
@@ -94,6 +94,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Nodes.html">Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Circuits.html">Circuit Solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TODOs.html">SuperPac TODO List</a></li>
 </ul>
 
@@ -203,26 +204,26 @@
 <p>Analog Components and each subclass define the characteristics of each type of component. Using these characteristics, an analysis module can set values. No analog component should be performing any sort of calculations of its values. That way, the solving engine can be independent of the component type.</p>
 <span class="target" id="module-AnalogComponent"></span><dl class="class">
 <dt id="AnalogComponent.AnalogComponent">
-<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">AnalogComponent</code><a class="reference internal" href="_modules/AnalogComponent.html#AnalogComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.AnalogComponent" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">AnalogComponent</code><span class="sig-paren">(</span><em>Name</em>, <em>R=0</em>, <em>L=0</em>, <em>C=0</em>, <em>Z=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#AnalogComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.AnalogComponent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to describe all analog components. Only three types exist: Resistors, Capacitors, and Inductors. This module is designed to be extensible to include other types. Unless overridden by a subclass, Analog components will be limited to two connections.
 The direction of current flow is left undefined and decided by the analyzer.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="AnalogComponent.Capacitor">
-<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Capacitor</code><span class="sig-paren">(</span><em>C</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Capacitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Capacitor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class for a capacitor. Impedance expressed in Laplace domain. Capacitance in microFarads.</p>
+<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Capacitor</code><span class="sig-paren">(</span><em>C</em>, <em>Name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Capacitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Capacitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for a capacitor. Capacitance in microFarads.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="AnalogComponent.Inductor">
-<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Inductor</code><span class="sig-paren">(</span><em>L</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Inductor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Inductor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class for an Inductor. Impedance expressed in Laplace domain. Inductance in milliHenrys.</p>
+<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Inductor</code><span class="sig-paren">(</span><em>L</em>, <em>Name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Inductor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Inductor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for an Inductor. Inductance in milliHenrys.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="AnalogComponent.Resistor">
-<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Resistor</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Resistor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Resistor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">AnalogComponent.</code><code class="descname">Resistor</code><span class="sig-paren">(</span><em>R</em>, <em>Name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AnalogComponent.html#Resistor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AnalogComponent.Resistor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for a resistor. Impedance is a purely proportional relation. Resistance in Ohms.</p>
 </dd></dl>
 
@@ -237,7 +238,7 @@ The direction of current flow is left undefined and decided by the analyzer.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Vs</span> <span class="o">=</span> <span class="n">ACCurrentSupply</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Will create a 10A 60Hz Voltage supply in the circuit.</p>
+<p>Will create a 10A 60Hz Current supply in the circuit.</p>
 </dd></dl>
 
 <dl class="class">
@@ -275,7 +276,7 @@ The direction of current flow is left undefined and decided by the analyzer.</p>
         <a href="Nodes.html" class="btn btn-neutral float-right" title="Nodes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="EquationSolver.html" class="btn btn-neutral" title="SuperPAC Circuit Solutions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Representations.html" class="btn btn-neutral" title="SuperPAC Circuit Solutions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

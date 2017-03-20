@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python Module Index &mdash; SuperPAC 0.1a documentation</title>
+  <title>SuperPAC Circuit Solutions &mdash; SuperPAC 0.1a documentation</title>
   
 
   
@@ -34,13 +34,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="SuperPAC 0.1a documentation" href="index.html"/>
- 
-
-    <script type="text/javascript">
-      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
-    </script>
-
-
+        <link rel="next" title="Circuit Elements" href="CircuitElements.html"/>
+        <link rel="prev" title="Documentation Standards" href="DocStandards.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -89,9 +84,20 @@
           
             
             
-                <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="DocStandards.html">Documentation Standards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Representations.html">SuperPAC Circuit Solutions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SuperPAC Circuit Solutions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-representations">Basic Representations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analog-circuit-solution">Analog Circuit Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#domains">Domains</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frequency-domain">Frequency Domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-domain">Time Domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="CircuitElements.html">Circuit Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Circuits.html">Circuit Solutions</a></li>
@@ -118,7 +124,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -126,9 +132,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="home.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>SuperPAC Circuit Solutions</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+            <a href="_sources/Representations.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -138,55 +146,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-   <h1>Python Module Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-a"><strong>a</strong></a> | 
-   <a href="#cap-c"><strong>c</strong></a> | 
-   <a href="#cap-n"><strong>n</strong></a> | 
-   <a href="#cap-s"><strong>s</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-a"><td></td><td>
-       <strong>a</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="CircuitElements.html#module-AnalogComponent"><code class="xref">AnalogComponent</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-c"><td></td><td>
-       <strong>c</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="CircuitElements.html#module-Component"><code class="xref">Component</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-n"><td></td><td>
-       <strong>n</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="Nodes.html#module-Node"><code class="xref">Node</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-s"><td></td><td>
-       <strong>s</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="CircuitElements.html#module-Supply"><code class="xref">Supply</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+  <div class="section" id="superpac-circuit-solutions">
+<h1>SuperPAC Circuit Solutions<a class="headerlink" href="#superpac-circuit-solutions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-representations">
+<h2>Basic Representations<a class="headerlink" href="#basic-representations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="analog-circuit-solution">
+<h3>Analog Circuit Solution<a class="headerlink" href="#analog-circuit-solution" title="Permalink to this headline">¶</a></h3>
+<p>SuperPAC uses SymPy to create equations at given nodes. Each node has a number of paths that connect it to the other nodes. Along each path will be a series of Components. Elements each have equations for voltage and current. By iteratively calculating each node&#8217;s Voltage and Current, equations can be generated which can be solved by SymPy&#8217;s solver.</p>
+</div>
+</div>
+<div class="section" id="domains">
+<h2>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="frequency-domain">
+<h3>Frequency Domain<a class="headerlink" href="#frequency-domain" title="Permalink to this headline">¶</a></h3>
+<p>Frequency-domain representations of circuits are often useful as an analytic tool. SuperPAC has the ability to generate frequency domain representations of circuits, and present frequency response.</p>
+</div>
+<div class="section" id="time-domain">
+<h3>Time Domain<a class="headerlink" href="#time-domain" title="Permalink to this headline">¶</a></h3>
+<p>Of course, SuperPAC has the ability to show time domain as well. Arbitrary time intervals across a user-set range make it easy to see how a circuit would respond over a period of time.</p>
+</div>
+</div>
+</div>
 
 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CircuitElements.html" class="btn btn-neutral float-right" title="Circuit Elements" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DocStandards.html" class="btn btn-neutral" title="Documentation Standards" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python Module Index &mdash; SuperPAC 0.1a documentation</title>
+  <title>Circuit Solutions &mdash; SuperPAC 0.1a documentation</title>
   
 
   
@@ -34,13 +34,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="SuperPAC 0.1a documentation" href="index.html"/>
- 
-
-    <script type="text/javascript">
-      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
-    </script>
-
-
+        <link rel="next" title="SuperPac TODO List" href="TODOs.html"/>
+        <link rel="prev" title="Nodes" href="Nodes.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -89,12 +84,20 @@
           
             
             
-                <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="DocStandards.html">Documentation Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Representations.html">SuperPAC Circuit Solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CircuitElements.html">Circuit Elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Nodes.html">Nodes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Circuits.html">Circuit Solutions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Circuit Solutions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reduce">1. Reduce</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-parallel">A. Parallel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b-series">B. Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-repeat">C. Repeat</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="TODOs.html">SuperPac TODO List</a></li>
 </ul>
 
@@ -118,7 +121,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -126,9 +129,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="home.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Circuit Solutions</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+            <a href="_sources/Circuits.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -138,55 +143,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-   <h1>Python Module Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-a"><strong>a</strong></a> | 
-   <a href="#cap-c"><strong>c</strong></a> | 
-   <a href="#cap-n"><strong>n</strong></a> | 
-   <a href="#cap-s"><strong>s</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-a"><td></td><td>
-       <strong>a</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="CircuitElements.html#module-AnalogComponent"><code class="xref">AnalogComponent</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-c"><td></td><td>
-       <strong>c</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="CircuitElements.html#module-Component"><code class="xref">Component</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-n"><td></td><td>
-       <strong>n</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="Nodes.html#module-Node"><code class="xref">Node</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-s"><td></td><td>
-       <strong>s</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="CircuitElements.html#module-Supply"><code class="xref">Supply</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+  <div class="section" id="circuit-solutions">
+<h1>Circuit Solutions<a class="headerlink" href="#circuit-solutions" title="Permalink to this headline">¶</a></h1>
+<p>Circuits are presented as collections of <span class="xref std std-ref">Components</span> and <span class="xref std std-ref">Nodes</span>. Under the hood, Circuits will iteratively replace these components in parallel and in series, until it arrives at the equivalent of all the components. At each stage of reduction, a transfer function is written to two stored matrices: The Voltage and the Current matrices. The solution equations are generated in this way to ensure no duplicate equation sets, that is to say, each equation is independent.</p>
+<p>With the the following steps, circuits will iteratively simplify themselves. More advanced solutions engines are in progress.</p>
+<div class="section" id="reduce">
+<h2>1. Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
+<p>Circuit elements are reduced in the following order:</p>
+<div class="section" id="a-parallel">
+<h3>A. Parallel<a class="headerlink" href="#a-parallel" title="Permalink to this headline">¶</a></h3>
+<p>Each set of parallel components are reduced to a single component. The reason for this order is that a component in series with two components in parallel would cause an error. Consider:</p>
+<p>Component A is in series with Component B and C, which are in parallel.</p>
+<p>A series replacement would replace components A and B with an equivalent component, AB. However, C is now left alone and will not be considered.</p>
+</div>
+<div class="section" id="b-series">
+<h3>B. Series<a class="headerlink" href="#b-series" title="Permalink to this headline">¶</a></h3>
+<p>With inner parallel components reduced, there will be components in series. Now, a series reduction will collapse those components&#8211;</p>
+</div>
+<div class="section" id="c-repeat">
+<h3>C. Repeat<a class="headerlink" href="#c-repeat" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
 
 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="TODOs.html" class="btn btn-neutral float-right" title="SuperPac TODO List" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Nodes.html" class="btn btn-neutral" title="Nodes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

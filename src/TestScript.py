@@ -24,19 +24,19 @@ if __name__ == "__main__":
 	Cct.addNode(N2)
 	N3 = Node.Node(sympy.Symbol('V3'))
 	Cct.addNode(N3)
+	N4 = Node.Node(sympy.Symbol('V4'))
+	Cct.addNode(N4)
 
 	R1.connect(N1)
 	R1.connect(N2)
 	C1.connect(N1)
-	C1.connect(N2)
-	C2.connect(N1)
-	C2.connect(N2)
+	C1.connect(N3)
+	C2.connect(N3)
+	C2.connect(N4)
 
 	R2.connect(N2)
 	R2.connect(N3)
 
-	V1.connect(N1)
-	V1.connect(N3)
 	N3.ground()
 
 	Cct.addComponent(R1)
@@ -45,3 +45,7 @@ if __name__ == "__main__":
 	Cct.addComponent(C2)
 
 	print ( [Cct.Components[Key].Name for Key in Cct.Components])
+	for node in [Cct.Nodes[ID] for ID in Cct.Nodes]:
+		Cct.reduce(node)
+
+
