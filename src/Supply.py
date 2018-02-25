@@ -1,13 +1,22 @@
 import Component
+class Supply(Component.Component):
+	def __init__(self, Name, V = 0, I = 0, F = 0):
+		self.Name = Name
+		self.MaxConnections = 2
+		self.Nodes = []
+		self.VSupply = V
+		self.ISupply = I
+		self.Frequency = FF
 
 class DCVoltageSupply(Component.Component):
 	'''
 	Class to define a DC voltage supply. The voltage specified is the constant output of the supply.
 	'''
-	def __init__(self, V):
+	def __init__(self, Name, V):
 		'''
 		Basic Constructor. Sets MaxConnections to 2 and Nodes to empty.
 		'''
+		self.Name = Name
 		self.MaxConnections = 2
 		self.Nodes = []
 		self.VSupply = V
@@ -23,10 +32,11 @@ class ACVoltageSupply(Component.Component):
 	
 	Will create a 120V 60Hz Voltage supply in the circuit. 
 	'''
-	def __init__(self, V, F):
+	def __init__(self, Name, V, F):
 		'''
 		Basic Constructor. Sets MaxConnections to 2 and Nodes to empty.
 		'''
+		self.Name = Name
 		self.MaxConnections = 2
 		self.Nodes = []
 		self.VSupply = V
@@ -36,10 +46,11 @@ class DCCurrentSupply(Component.Component):
 	'''
 	Class to define a DC Current supply. The current specified is the constant output of the supply.
 	'''
-	def __init__(self, I):
+	def __init__(self, Name, I):
 		'''
 		Basic Constructor. Sets MaxConnections to 2 and Nodes to empty.
 		'''
+		self.Name = Name
 		self.MaxConnections = 2
 		self.Nodes = []
 		self.ISupply = I
@@ -55,10 +66,11 @@ class ACCurrentSupply(Component.Component):
 	
 	Will create a 10A 60Hz Current supply in the circuit. 
 	'''
-	def __init__(self, I, F):
+	def __init__(self, Name, I, F):
 		'''
 		Basic Constructor. Sets MaxConnections to 2 and Nodes to empty.
 		'''
+		self.Name = Name
 		self.MaxConnections = 2
 		self.Nodes = []
 		self.ISupply = I

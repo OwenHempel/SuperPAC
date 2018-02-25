@@ -6,14 +6,13 @@ if __name__ == "__main__":
 	import Circuit
 	import sympy
 
-
 	R1 = AnalogComponent.Resistor(8, 'R1')
 	R2 = AnalogComponent.Resistor(8, 'R2')
 	C2 = AnalogComponent.Capacitor(1000, 'C2')
 	C1 = AnalogComponent.Capacitor(1000, 'C1')
 	L1 = AnalogComponent.Inductor(5, 'L1')
 	L2 = AnalogComponent.Inductor(5, 'L2')
-	V1 = Supply.DCVoltageSupply(12)
+	V1 = Supply.DCVoltageSupply('VS1', 12)
 
 
 	Cct = Circuit.Circuit()
@@ -27,6 +26,14 @@ if __name__ == "__main__":
 	N4 = Node.Node(sympy.Symbol('V4'))
 	Cct.addNode(N4)
 
+# N1-- C1--	N3---GND
+#  |	   / |	
+# R1   R2	C2
+#  |  /		 |
+# N2		N4
+
+
+
 	R1.connect(N1)
 	R1.connect(N2)
 	C1.connect(N1)
@@ -36,6 +43,7 @@ if __name__ == "__main__":
 
 	R2.connect(N2)
 	R2.connect(N3)
+	V1.connect(N1)
 
 	N3.ground()
 

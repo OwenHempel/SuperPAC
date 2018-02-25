@@ -1,5 +1,6 @@
 import sympy
 import AnalogComponent
+import Supply
 
 class Circuit:
 	'''

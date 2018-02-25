@@ -2,10 +2,11 @@ class Component:
 	'''
 	Circuit Component Base class. provides the absolute minimum to meet the definition of a component in a circuit.
 	'''
-	def __init__(self):
+	def __init__(self, Name):
 		'''
 		Basic Constructor. Sets MaxConnections to 0 and Nodes to empty.
 		'''
+		self.Name = Name
 		self.MaxConnections = 0
 		self.Nodes = []
 
