@@ -6,7 +6,7 @@ class Supply(Component.Component):
 		self.Nodes = []
 		self.VSupply = V
 		self.ISupply = I
-		self.Frequency = FF
+		self.Frequency = F
 
 class DCVoltageSupply(Component.Component):
 	'''
