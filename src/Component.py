@@ -9,6 +9,7 @@ class Component:
 		self.Name = Name
 		self.MaxConnections = 0
 		self.Nodes = []
+		self.Impedance = 0
 
 	def connect(self, Node):
 		'''

@@ -1,4 +1,4 @@
-#!/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5
+
 if __name__ == "__main__":
 	import AnalogComponent
 	import Node
