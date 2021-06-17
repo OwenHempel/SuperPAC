@@ -2,7 +2,7 @@ import Component
 
 class DigitalComponent(Component.Component):
 	'''
-	Class to describe all digital components. Only three types exist: Resistors, Capacitors, and Inductors. This module is designed to be extensible to include other types. Unless overridden by a subclass, Analog components will be limited to two connections.
+	Class to describe all digital components. This module is designed to be extensible to include other types.
 	'''
 	def __init__(self):
 		'''
@@ -19,3 +19,11 @@ class Switch(DigitalComponent):
 		self.MaxConnections = (Poles+1)*Throws
 		self.Nodes = []
 		self.State = State
+
+class Relay(DigitalComponent):
+	'''
+	Class for a relay. Has 2 special connections for the Coil. Has a number of contact sets, each initialized to a Normal state. If the voltage across the coil contacts exceeds the coil voltage parameter, the states of all contacts are inverted
+	'''
+	def __init__(self, CoilVoltage = None, State = False)
+
+		self.NormalOpenContacts
