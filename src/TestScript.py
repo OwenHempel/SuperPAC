@@ -26,11 +26,11 @@ if __name__ == "__main__":
 	N4 = Node.Node(sympy.Symbol('V4'))
 	Cct.addNode(N4)
 
-# N1-- C1--	N3---GND
-#  |	   / |	
+# N1---C1---N3---GND
+#  |	  /  |	
 # R1   R2	C2
-#  |  /		 |
-# N2		N4
+#  | /		 |
+# N2--V1----N4
 
 
 
@@ -43,7 +43,8 @@ if __name__ == "__main__":
 
 	R2.connect(N2)
 	R2.connect(N3)
-	V1.connect(N1)
+	V1.connect(N2)
+	V1.connect(N4)
 
 	N3.ground()
 

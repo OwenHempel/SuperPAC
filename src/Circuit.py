@@ -21,12 +21,16 @@ class Circuit:
 		ComponentID = len(self.Components)
 		self.Components[ComponentID] = Component
 
-	def removeNode(self, Node):
-		if Node in [self.Nodes[NodeID] for NodeID in self.Nodes]:
-			del self.Nodes[NodeID]
+	##def removeNode(self, Node):
+		##if Node in [self.Nodes[NodeID] for NodeID in self.Nodes]:
+			##del self.Nodes[NodeID]
+	def findPaths(self):
+		'''an An algorithm to find the number of paths in a circuit
+		'''
+		
+		pass
 
-
-	def SeriesEquivalent(self, Components):
+	def seriesEquivalent(self, Components):
 		'''Calculates the sum of resistances in a series path. Path is a list of components'''
 		Ztot = 0
 		Name = ""
@@ -35,7 +39,7 @@ class Circuit:
 			Name += Component.Name
 		return AnalogComponent.AnalogComponent(Name, Z = Ztot)
 
-	def ParallelEquivalent(self, Components):
+	def parallelEquivalent(self, Components):
 		'''Calculates the equivalent impedance of a set of resistors. Components is the set of components that share two nodes.'''
 		Zinv = 0
 		Ztot = 0
